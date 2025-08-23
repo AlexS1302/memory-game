@@ -1,0 +1,27 @@
+.App {
+  display: grid;
+  grid-template-rows: 150px 2.5fr;
+  min-height: 100vh;
+  padding: 2rem 3rem;
+}
+
+
+.Game {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-auto-rows: minmax(450px, 1fr);
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0rem;
+}
+
+.card {
+  background-color: lightblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pokemon-sprite {
+  flex: 1;
+}
