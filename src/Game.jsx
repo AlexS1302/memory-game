@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
+import loadingAnimation from "./assets/loading-animation.gif";
+import { PawPrint } from "lucide-react";
 
 function Game() {
   const [cards, setCards] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const newCards = Array.from({ length: 12 }, () => ({
@@ -28,12 +31,12 @@ function Game() {
             return {
               id: details.id,
               name: details.name,
-              sprite:
-                details.sprites.front_default,
+              sprite: details.sprites.front_default,
             };
           })
         );
         setCards(detailedCards);
+        setIsLoading(false);
       } catch (error) {
         console.error("Problem fetching Pokemons:", error);
       }
@@ -48,8 +51,25 @@ function Game() {
     <div className="Game">
       {cards.map((card) => (
         <div key={card.id} className="card">
-          <img className="pokemon-sprite" src={card.sprite}></img>
-          <p className="pokemon-name">{card.name}</p>
+          <div className="sprite-container">
+            <img
+              className={isLoading ? "loading-icon" : "pokemon-sprite"}
+              src={isLoading ? loadingAnimation : card.sprite}
+              alt={isLoading ? "Loading..." : card.name}
+            />
+          </div>
+
+          <p className="pokemon-name">
+            {isLoading ? (
+              <>
+                <PawPrint /> Loading...{" "}
+              </>
+            ) : (
+              <>
+                <PawPrint /> {card.name}
+              </>
+            )}
+          </p>
         </div>
       ))}
     </div>

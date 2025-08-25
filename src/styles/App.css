@@ -32,14 +32,27 @@
   border-radius: 10px;
 }
 
-.pokemon-sprite {
-  width: 100%;
-  height: 100%;
+.sprite-container {
   border-bottom: 1px solid lightgray;
+  width: 100%;
+  height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1; 
+}
+
+.pokemon-sprite {
+  height: 100%;
+  width: 100%;
 }
 
 .pokemon-name {
+  height: 5%;
   font-weight: 600;
   font-size: 1.5rem;
-  margin-block: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
 }

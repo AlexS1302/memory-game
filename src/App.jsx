@@ -1,6 +1,6 @@
 import Header from "./Header";
 import Game from "./Game";
-import "./App.css";
+import "./styles/App.css";
 
 function App() {
   return (
