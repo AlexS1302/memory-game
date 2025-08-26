@@ -1,4 +1,4 @@
-function Header({score, bestScore}) {
+function Header({ score, bestScore }) {
   return (
     <div className="Header">
       <h1 className="header-title">Pokémon Memory Game</h1>
