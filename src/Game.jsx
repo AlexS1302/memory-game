@@ -54,44 +54,66 @@ function Game({ score, setScore, setBestScore }) {
 
     if (clickedPokemons.indexOf(cardId) > -1) {
       setScore(0);
-      setBestScore((prev) => Math.max(prev, score));
+      setBestScore((prevBest) => Math.max(prevBest, score));
       setClickedPokemons([]);
+      handlePokemonShuffle();
     } else {
       setClickedPokemons((prevClicked) => [...prevClicked, cardId]);
+      handlePokemonShuffle();
     }
   };
+
+  const handlePokemonShuffle = () => {
+    setIsLoading(true);
+    setTimeout(() => {
+      const shuffledCards = shuffle(cards);
+      setCards(shuffledCards);
+      setIsLoading(false);
+    }, 300);
+  };
+
+  // Fisher-Yates algorithm
+  function shuffle(array) {
+    const copy = [...array];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const random = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[random]] = [copy[random], copy[i]];
+    }
+    return copy;
+  }
 
   console.log("Array:", cards);
 
   return (
     <div className="Game">
-      {cards.map((card) => (
-        <div
-          key={card.id}
-          onClick={() => handlePokemonClick(card.id)}
-          className="card"
-        >
-          <div className="sprite-container">
-            <img
-              className={isLoading ? "loading-icon" : "pokemon-sprite"}
-              src={isLoading ? loadingAnimation : card.sprite}
-              alt={isLoading ? "Loading..." : card.name}
-            />
-          </div>
+      {cards &&
+        cards.map((card) => (
+          <div
+            key={card.id}
+            onClick={() => handlePokemonClick(card.id)}
+            className="card"
+          >
+            <div className="sprite-container">
+              <img
+                className={isLoading ? "loading-icon" : "pokemon-sprite"}
+                src={isLoading ? loadingAnimation : card.sprite}
+                alt={isLoading ? "Loading..." : card.name}
+              />
+            </div>
 
-          <p className="pokemon-name">
-            {isLoading ? (
-              <>
-                <PawPrint /> Loading...{" "}
-              </>
-            ) : (
-              <>
-                <PawPrint /> {card.name}
-              </>
-            )}
-          </p>
-        </div>
-      ))}
+            <p className="pokemon-name">
+              {isLoading ? (
+                <>
+                  <PawPrint /> Loading...{" "}
+                </>
+              ) : (
+                <>
+                  <PawPrint /> {card.name}
+                </>
+              )}
+            </p>
+          </div>
+        ))}
     </div>
   );
 }
