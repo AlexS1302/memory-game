@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import loadingAnimation from "./assets/loading-animation.gif";
+import loadingAnimation from "./assets/animations/loading-animation.gif";
 import { PawPrint } from "lucide-react";
 
 function Game({ score, setScore, setBestScore }) {
@@ -21,9 +21,8 @@ function Game({ score, setScore, setBestScore }) {
         const response = await fetch(
           "https://pokeapi.co/api/v2/pokemon?limit=12"
         );
-        const data = await response.json();
-        console.log("API Data:", data);
 
+        const data = await response.json();
         const pokemonList = data.results;
 
         const detailedCards = await Promise.all(
@@ -81,8 +80,6 @@ function Game({ score, setScore, setBestScore }) {
     }
     return copy;
   }
-
-  console.log("Array:", cards);
 
   return (
     <div className="Game">
