@@ -7,6 +7,7 @@ If the players click on the same Pokémon twice, the game resets.
 
 ## Features
 * __Dynamic Card Shuffling__: Every correct selection reshuffles the Pokémon cards.
+* __Loading Animation__: Each card has its own Pokéball loading animation.
 * __Score Tracking__: Displays your current score and best score.
 * __Responsive Design__: Optimized for desktops, tablets, and mobile devices.
 
