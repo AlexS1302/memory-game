@@ -6,8 +6,8 @@ A responsive Pokémon memory game built with React, where players test their mem
 If the players click on the same Pokémon twice, the game resets.
 
 ## Features
-* __Dynamic Card Shuffling__ – Every correct selection reshuffles the Pokémon cards.
-* __Score Tracking__ – Displays your current score and best score.
+* __Dynamic Card Shuffling__: Every correct selection reshuffles the Pokémon cards.
+* __Score Tracking__: Displays your current score and best score.
 * __Responsive Design__: Optimized for desktops, tablets, and mobile devices.
 
 ## Technologies Used
