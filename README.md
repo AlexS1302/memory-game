@@ -1,12 +1,29 @@
-# React + Vite
+# Memory Game
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
+A responsive Pokémon memory game built with React, where players test their memory by clicking on each Pokémon only once. After every correct selection, the cards reshuffle to increase the challenge. 
 
-Currently, two official plugins are available:
+If the players click on the same Pokémon twice, the game resets.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+* __Dynamic Card Shuffling__ – Every correct selection reshuffles the Pokémon cards.
+* __Score Tracking__ – Displays your current score and best score.
+* __Responsive Design__: Optimized for desktops, tablets, and mobile devices.
 
-## Expanding the ESLint configuration
+## Technologies Used
+* React
+* Vite
+* Lucide (for icons)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project Link
+You can view this project [here](https://alexs1302-memory-game.vercel.app/)!
+
+## Project Interface (Screenshots)
+### Desktop View
+![Screenshot of the Memory Game interface on desktop](public/images/desktop-view.png)
+
+### Mobile view
+![Screenshot of the Memory Game interface on mobile](public/images/mobile-view.png)
+
+## Credits
+This project was created as part of The Odin Project's curriculum, a free online resource for learning web development.
